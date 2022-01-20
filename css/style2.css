@@ -25,13 +25,14 @@ h1 {
 
 }
 
-h2 {
-text-align: left;
-margin-left: 5%;
-text-decoration: underline;
+nav {
+height: 20px;
+flex-direction: row;
+display: flex;
+justify-content: space-between;
+text-align: center;
 }
 
-table {
-  border-style: solid;
-  border: black;
+nav div {
+
 }
