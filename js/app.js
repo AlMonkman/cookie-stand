@@ -2,6 +2,8 @@
 
 let citySection = document.getElementById('city-sales');
 
+const cityForm = document.getElementById('addCity');
+
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 const city = [];
@@ -108,11 +110,13 @@ Cities.prototype.renderStores = function () {
   tableRow2.appendChild(tableData2);
 }
 
+const footer = document.createElement('tfoot');
+
 function renderFooter() {
 
   let table = document.querySelector('table');
 
-  const footer = document.createElement('tfoot');
+  // const footer = document.createElement('tfoot');
   table.appendChild(footer);
 
   const lastRow = document.createElement('tr');
@@ -132,7 +136,6 @@ function renderFooter() {
     totalHourlySales.textContent = `${hourlyTotal}`;
     lastRow.appendChild(totalHourlySales);
     grandTotal += hourlyTotal;
-    console.log(grandTotal);
   }
   const grandTotal1 = document.createElement('td');
   grandTotal1.textContent = `${grandTotal}`;
@@ -151,12 +154,21 @@ function renderTable() {
 
 renderTable();
 
+function handleSubmit(event){
+event.preventDefault();
 
+let name = event.target.cityName.value;
+let minimum = +event.target.minimum.value;
+let maximum = +event.target.maximum.value;
+let average = +event.target.average.value;
 
+let newCity = new Cities(name, minimum, maximum, average);
+footer.innerHTML = '';
+newCity.calculateCustomers();
+newCity.calculateCookies();
+newCity.renderStores();
+renderFooter();
 
+}
 
-
-
-
-
-
+cityForm.addEventListener('submit', handleSubmit);

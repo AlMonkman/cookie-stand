@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Salmon Cookies!</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <header>
-      <img src="img/salmon.png" alt="fishy">
-      <h1>Sales Data</h1>
-      <img src="img/salmon.png" alt="fishy"></header>
-    <nav>
-      <ul>
-        <img src="img/frosted-cookie.jpg" alt="cookie cutter">
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="sales.html">Store Page</a></li>
-        <img src="img/frosted-cookie.jpg" alt="cookie cutter">
-      </ul>
-    </nav>
-    
-    <main>
-      <h2>Cookie Sales Per Hour</h2>
-      <section id="city-sales"></section>
 
-    </main>
-    <script src="js/app.js" type="text/javascript"></script>
-  </body>
+<head>
+  <title>Salmon Cookies!</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <img src="img/salmon.png" alt="fishy">
+    <h1>Sales Data</h1>
+    <img src="img/salmon.png" alt="fishy">
+  </header>
+  <nav>
+    <ul>
+      <img src="img/frosted-cookie.jpg" alt="cookie cutter">
+      <li><a href="index.html">Home Page</a></li>
+      <li><a href="sales.html">Store Page</a></li>
+      <img src="img/frosted-cookie.jpg" alt="cookie cutter">
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Cookie Sales Per Hour</h2>
+    <section id="city-sales"></section>
+  </main>
+  <p>Interested in opening up your own salmon cookies shop? Fill out the following information to add yours to the table!</p>
+
+  <form id="addCity">
+    <fieldset>
+      <legend>City Store Information</legend>
+
+      <label for="name">City name:</label>
+      <input id="name" type="text" name="cityName">
+
+      <label for="minimum">Minimum customers per hour:</label>
+      <input id="minimum" type="text" name="minimum">
+
+      <label for="maximum">Maximum customers per hour:</label>
+      <input id="maximum" type="text" name="maximum">
+
+      <label for="average">Average cookies sold per hour:</label>
+      <input id="average" type="text" name="average">
+
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script src="js/app.js" type="text/javascript"></script>
+</body>
+
 </html>
