@@ -9,6 +9,34 @@ main {
   border-color: lightgreen;
   margin-top: 40px;
 }
+
+ #fish {
+  width: 20%;
+  float: right;
+  border: 3px solid black;
+  margin-right: 20px;
+}
+
+#cutter {
+  width: 20%;
+  float: right;
+  border: 3px solid black;
+  margin-right: 20px;
+}
+
+#chinook {
+  width: 30%;
+  float: right;
+  border: 3px solid black;
+  margin-right: 20px;
+}
+
+main ul{
+  border-bottom: solid;
+  border-bottom: black;
+}
+
+
 header {
   background-color: salmon;
   border-style: double;
@@ -35,19 +63,25 @@ h1 {
   text-align: center;
   text-decoration: underline ;
   margin-bottom: 80px;
-  margin-left: 290px;
-  margin-right: 306px;
+  margin-left: 260px;
+  margin-right: 260px;
+
 }
 
 h2 {
-text-align: left;
-margin-left: 5%;
 text-decoration: underline;
+text-decoration-color: rgb(78, 78, 83);
+margin-left: 20px;
+font-size: x-large;
 }
 
-table {
+h3{
+  margin-left: 40px;
+  margin-top: 50px;
+  display: inline-block;
+  border-top:black;
   border-style: solid;
-  border: black;
+  padding: 10px;
 }
 
 nav{
@@ -62,9 +96,9 @@ nav{
 }
 
 nav ul {
+  list-style: none;
   margin-left: 175px;
   margin-right: 50px;
-  list-style: none;
   
 }
 
@@ -81,15 +115,17 @@ nav ul li:hover{
 background-color: black;
 }
 
-table * {
-  border: 2px solid black;
+#family {
+  width: 50%;
+  border: 3px solid black;
+  margin-top: 20px;
 }
 
-table {
-  border-collapse: collapse;
-  margin: 20px;
-}
-
-td{
-  padding: 10px;
+#shirt {
+  width: 28%;
+  border: 3px solid black;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
