@@ -67,8 +67,11 @@ function renderHeader() {
   tableElem.appendChild(tableHead);
 
   const tableRow1 = document.createElement('tr');
-  tableRow1.textContent = 'Time:';
   tableHead.appendChild(tableRow1);
+
+  const headingTime = document.createElement('th');
+  headingTime.textContent = 'Time:';
+  tableRow1.appendChild(headingTime);
 
   for (let i = 0; i < hours.length; i++) {
     const tableHeader = document.createElement('th');
@@ -105,14 +108,35 @@ Cities.prototype.renderStores = function () {
   tableRow2.appendChild(tableData2);
 }
 
-function renderFooter(){
+function renderFooter() {
 
   let table = document.querySelector('table');
 
   const footer = document.createElement('tfoot');
-  footer.textContent = 'Total Cookies Sold';
   table.appendChild(footer);
 
+  const lastRow = document.createElement('tr');
+  lastRow.textContent = 'Total Cookies Sold';
+  footer.appendChild(lastRow);
+
+  let grandTotal = 0
+
+  for (let i = 0; i < hours.length; i++) {
+    let hourlyTotal = 0
+
+    for (let j = 0; j < city.length; j++) {
+      hourlyTotal += city[j].cookiesPerHour[i];
+
+    }
+    const totalHourlySales = document.createElement('td');
+    totalHourlySales.textContent = `${hourlyTotal}`;
+    lastRow.appendChild(totalHourlySales);
+    grandTotal += hourlyTotal;
+    console.log(grandTotal);
+  }
+  const grandTotal1 = document.createElement('td');
+  grandTotal1.textContent = `${grandTotal}`;
+  lastRow.appendChild(grandTotal1);
 
 }
 
@@ -128,32 +152,7 @@ function renderTable() {
 renderTable();
 
 
-// Cities.prototype.renderCities = function () {
-//   const articleElem = document.createElement('article');
-//   citySection.appendChild(articleElem);
 
-//   const h3Elem = document.createElement('h3');
-//   h3Elem.textContent = this.name;
-//   articleElem.appendChild(h3Elem);
-
-//   const ulElem = document.createElement('ul');
-//   articleElem.appendChild(ulElem);
-
-//   for (let i = 0; i < hours.length; i++) {
-//     const liElem = document.createElement('li');
-//     liElem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
-//     ulElem.appendChild(liElem);
-//   };
-
-//   const ulElem1 = document.createElement('ul');
-//   ulElem1.textContent = 'Total';
-//   articleElem.appendChild(ulElem1);
-
-//   const liElem1 = document.createElement('li');
-//   liElem1.textContent = `${this.totalCookieSales}`;
-//   ulElem1.appendChild(liElem1);
-
-// }
 
 
 
